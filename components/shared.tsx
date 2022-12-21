@@ -6,7 +6,9 @@ export const ScreenWidth = Dimensions.get("screen").width;
 export const ScreenHeight = Dimensions.get("screen").height;
 
 export const Container = styled.View`
+  display: flex;
   flex: 1;
   align-items: center;
+  justify-content: center;
   background-color: ${colors.white};
 `;

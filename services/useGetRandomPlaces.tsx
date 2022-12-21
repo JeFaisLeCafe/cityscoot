@@ -7,7 +7,7 @@ export interface Params {
   size: number;
 }
 
-const useGetRandomPlaces = ({ size }: Params = { size: 20 }) => {
+const useGetRandomPlaces = ({ size }: Params = { size: 100 }) => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<Location[]>([]);
@@ -24,7 +24,7 @@ const useGetRandomPlaces = ({ size }: Params = { size: 20 }) => {
     try {
       setIsLoading(true);
       setError("");
-      const data = await axios.get<Location[]>(API_URL, {
+      const data = await axios.get<Location[]>(API_URL + "addresses", {
         params: params
       });
       setData(data.data);
