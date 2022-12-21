@@ -32,6 +32,7 @@ const Map = () => {
             userLocationCalloutEnabled>
             {data.map((marker) => (
               <Marker
+                key={marker.uid}
                 coordinate={{
                   latitude: marker.latitude,
                   longitude: marker.longitude
